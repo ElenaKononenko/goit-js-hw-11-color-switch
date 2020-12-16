@@ -11,10 +11,13 @@ refs.stop.addEventListener('click', onStop);
 
 function onStart() {
   refs.start.setAttribute('disabled', 'true');
+  colorChange();
   timerBlink = setInterval(colorChange, 1000);
 }
 function colorChange() {
-  let backColor = 'background-color:' + colors[randomIntegerFromInterval(0, 5)];
+  let backColor =
+    'background-color:' +
+    colors[randomIntegerFromInterval(0, colors.length - 1)];
   refs.body.setAttribute('style', backColor);
 }
 
